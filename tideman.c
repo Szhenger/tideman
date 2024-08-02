@@ -11,7 +11,7 @@ int preferences[MAX][MAX];
 // locked[i][j] means i is locked in over j
 bool locked[MAX][MAX];
 
-// Each pair has a winner, loser
+// Each pair has a winner and loser
 typedef struct
 {
     int winner;

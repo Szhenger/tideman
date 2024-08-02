@@ -1,2 +1,2 @@
 main: main.c
-	clang main.c -o main -lcs50
+	clang main.c -o main -lstring50

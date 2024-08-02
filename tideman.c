@@ -1,3 +1,4 @@
+#include <cs50.h>
 #include <stdio.h>
 #include <string.h>
 
@@ -34,7 +35,7 @@ void lock_pairs(void);
 bool makes_cycle(int start, int end);
 void print_winner(void);
 
-int main(int argc, char *argv[])
+int main(int argc, string argv[])
 {
     // Check for invalid usage
     if (argc < 2)

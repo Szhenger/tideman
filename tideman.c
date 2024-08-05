@@ -100,6 +100,7 @@ int main(int argc, string argv[])
         printf("\n");
     }
 
+    // Computes the winner if exists
     add_pairs();
     sort_pairs();
     lock_pairs();

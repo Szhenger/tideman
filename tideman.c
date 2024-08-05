@@ -164,7 +164,6 @@ void sort_pairs(void)
     for (int i = 0; i < pair_count; i++)
     {
         int max_pre = 0;
-
         for (int j = i; j < pair_count; j++)
         {
             if (preferences[pairs[j].winner][pairs[j].loser] > max_pre)
@@ -172,12 +171,10 @@ void sort_pairs(void)
                 max_pre = preferences[pairs[j].winner][pairs[j].loser];
             }
         }
-
         for (int j = i; j < pair_count; j++)
         {
             int temp_winner = 0;
             int temp_loser = 0;
-
             if (preferences[pairs[j].winner][pairs[j].loser] == max_pre)
             {
                 temp_winner = pairs[i].winner;
@@ -232,7 +229,6 @@ bool makes_cycle(int start, int end)
 void print_winner(void)
 {
     int candidate_edges[candidate_count];
-
     for (int i = 0; i < candidate_count; i++)
     {
         candidate_edges[i] = 0;
@@ -245,9 +241,8 @@ void print_winner(void)
             }
         }
     }
-
+    
     int min_edges = candidate_count;
-
     for (int i = 0; i < candidate_count; i++)
     {
         if (candidate_edges[i] < min_edges)

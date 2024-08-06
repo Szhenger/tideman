@@ -4,4 +4,6 @@ In CS50's Introduction to Computer Science (Harvard University Computer Science 
 
 Tideman elections are ranked-choice voting systems where votors can vote for more than one candidate by ordering the candidates keyed on preference. Next, the computation of the winner is to determine the "Condorcet" winner (if they exist): the candidate that wins in all head-to-head matchup against other candidates. In essences, the procedure makes a directed graph with the votes and finds the "source": the node that has only outward edges i.e. the winner (ignore edges that create cycles i.e. graphs without a source).
 #### Specification
-TODO
+tideman.c is the source code file written in C that runs a tideman election on an array of candidates. The procedure main defines the direct computation of the election with a few subprocedure calls to help with the computation. Given that the complexity of the computation scales with the number of candidates, we defined a macro MAX to 9 for limiting the number of candidates in an election. Next, we define a matrix perferences of integers to obtain the number of votors who prefer candidate i over candidate j. Since this is a ranked-pairs election, we define a struct pair where the indices of the winner and loser are recorded. 
+
+main is the procedure to directly compute the winner by making a tree-structure graph (e.g. there exists a source at each iteration) by using the string50 library to obtain the ranked-choice votes and populate the preferences matrix iteratively with each vo  

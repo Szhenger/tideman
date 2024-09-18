@@ -4,4 +4,14 @@
 
 TODO
 
-###
+## Background
+
+TODO
+
+## Understanding
+
+TODO
+
+## Specification
+
+TODO

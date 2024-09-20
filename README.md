@@ -13,6 +13,17 @@ The Tideman voting method (also known as the "ranked pairs" method) is a ranked-
 ## Background
 
 In general, the Tideman method works by constructing a directed graph data structure of candidates, where an arrow (i.e. edge) from Candidate 1 to Candidate 2 indicates that Candidate 1 wins in a head-to-head match against Candidate 2. The method seeks to identify the source of this graph — defined as the candidate with no incoming edges (i.e., no arrows pointing toward them) — as the winner. However, in some voting configurations, a Condorcet winner (a candidate who wins all head-to-head matches) may not exist. In such cases, the graph may contain cycles, meaning there is no clear source. Indeed, the Tideman method is only valid for input configurations where a source exists.
+
+In addition, when constructing the graph, the Tideman algorithm ensures no cycles are formed, as cycles would prevent the identification of a source (winner). The algorithm begins by adding the strongest edges first—those representing the most decisive victories, where a greater number of voters prefer one candidate over another.
+
+Each edge is added based on the strength of victory (i.e., the margin by which one candidate defeats another), and edges are locked into the graph as long as they do not create a cycle. If adding an edge would result in a cycle, it is ignored to maintain the integrity of the directed acyclic graph (i.e. directed graph with no cycles), ensuring that a valid source can be identified if one exists.
+
+Formally, the Tideman algorithm consists of three procedures:
+
+* Tally: Assuming that the voters have indicated all of their preferences, calculate, for each pair of candidates, who the preferred candidate is and by what margin they are preferred.
+* Sort: Sort the pairs of candidates in decending order of strength of victory, where strength of victory is defined to be the margin of voters who prefer the preferred candidate.
+* Lock: Starting with the strongest pair, progressively "lock in" each pair to the directed graph, ensuring that locking a pair does not create a cycle. This process continues for all pairs in order, avoiding any updates that would result in a cycle.
+
 ## Understanding
 
 TODO

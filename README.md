@@ -40,7 +40,7 @@ In the main procedure, the program loops through the locked graph and intially s
 
 Next, the program loops over all of the votors and gets their preferences in an array called `ranks` (via a call to `vote`) with `ranks[i]` is the index of the candidate who is the `i`th preference for the voter. These ranks are passed into the `record_preference` function, which takes the ranks and updates the `preferences` array.
 
-Last, once all the votes are collected, the pair of candidates are added to the `pairs` array via a call to `add_pairs`, sorted via a call to `sort_pair`, and locked into the graph via a call to `lock_pairs`. At the end, `print_winner` is called to return the name of the election's winner to the command-line.
+Last, once all the votes are collected, the pair of candidates are added to the `pairs` array via a call to `add_pairs`, sorted via a call to `sort_pairs`, and locked into the graph via a call to `lock_pairs`. At the end, `print_winner` is called to return the name of the election's winner to the command-line.
 
 ## Specification
 

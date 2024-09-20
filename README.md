@@ -12,8 +12,7 @@ The Tideman voting method (also known as the "ranked pairs" method) is a ranked-
 
 ## Background
 
-TODO
-
+In general, the Tideman method works by constructing a directed graph data structure of candidates, where an arrow (i.e. edge) from Candidate 1 to Candidate 2 indicates that Candidate 1 wins in a head-to-head match against Candidate 2. The method seeks to identify the source of this graph — defined as the candidate with no incoming edges (i.e., no arrows pointing toward them) — as the winner. However, in some voting configurations, a Condorcet winner (a candidate who wins all head-to-head matches) may not exist. In such cases, the graph may contain cycles, meaning there is no clear source. Indeed, the Tideman method is only valid for input configurations where a source exists.
 ## Understanding
 
 TODO

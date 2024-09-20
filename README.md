@@ -28,19 +28,19 @@ Formally, the Tideman algorithm consists of three procedures:
 
 Consider the tideman.c source code file. 
 
-First, notice the integer-valued matrix `preferences` (represented as a two-dimensional array of integers) that tracks voter preferences between candidates. The integer preferences[i][j] represents the number of voters who prefer Candidate i over Candidate j. 
+First, notice the integer-valued matrix `preferences` (represented as a two-dimensional array of integers) that tracks voter preferences between candidates. The integer `preferences[i][j]` represents the number of voters who prefer Candidate i over Candidate j. 
 
-Second, the file also defines another boolean-valued matrix locked (again represented as a two-dimensional array of boolean values), which will represent the directed candidate graph, so locked[i][j] being true represents the existence of an directed edge from Candidate i to Candidate j, meaning Candidate i is locked in as preferred over Candidate j else, there is no edge between Candidate i and Candidate j.
+Second, the file also defines another boolean-valued matrix `locked` (again represented as a two-dimensional array of boolean values), which will represent the directed candidate graph, so `locked[i][j]` being true represents the existence of an directed edge from Candidate i to Candidate j, meaning Candidate i is locked in as preferred over Candidate j else, there is no edge between Candidate i and Candidate j.
 
-Third, a data structure is defined called pair (represented as a struct), used to represent a pair of candidates: each pair includes the winner's candidate index and the loser's candidate index (i.e. adding semantics to the candidate indexes). The candidates are stored in a string-valued vector candidates (represented as an array of strings), representing the names of the candidates. There is also an array of pairs, which contains all of the pairs of candidates (for which one is preferred over the other) in the election.
+Third, a data structure is defined called `pair` (represented as a struct), used to represent a pair of candidates: each pair includes the winner's candidate index and the loser's candidate index (i.e. adding semantics to the candidate indexes). The candidates are stored in a string-valued vector `candidates` (represented as an array of `string`s), representing the names of the candidates. There is also an array `pairs`, which contains all of the pairs of candidates (for which one is preferred over the other) in the election.
 
-Fourth, the program defines two global variables: candidate_count and pairs_count, representing the numbers of candidates and pairs in the arrays candidates and pairs, respectively. 
+Fourth, the program defines two global variables: `candidate_count` and `pairs_count`, representing the numbers of candidates and pairs in the arrays candidates and pairs, respectively. 
 
 In the main procedure, the program loops through the locked graph and intially sets all the values to false, which indicates our initial graph has no edges in it.
 
-Next, the program loops over all of the votors and gets their preferences in an array called ranks (via a call to vote) with ranks[i] is the index of the candidate who is the ith preference for the voter. These ranks are passed into the record_preference function, which takes the ranks and updates the preferences array.
+Next, the program loops over all of the votors and gets their preferences in an array called `ranks` (via a call to `vote`) with `ranks[i]` is the index of the candidate who is the `i`th preference for the voter. These ranks are passed into the `record_preference` function, which takes the ranks and updates the `preferences` array.
 
-Last, once all the votes are collected, the pair of candidates are added to the pairs array via a call to add_pairs, sorted via a call to sort_pair, and locked into the graph via a call to lock_pairs. At the end, print_winner is called to return the name of the election's winner to the command-line.
+Last, once all the votes are collected, the pair of candidates are added to the `pairs` array via a call to `add_pairs`, sorted via a call to `sort_pair`, and locked into the graph via a call to `lock_pairs`. At the end, `print_winner` is called to return the name of the election's winner to the command-line.
 
 ## Specification
 

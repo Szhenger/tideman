@@ -22,7 +22,7 @@ typedef struct
 string candidates[MAX];
 pair pairs[MAX * (MAX - 1) / 2];
 
-// Helper variables
+// Helper global variables
 int pair_count;
 int candidate_count;
 

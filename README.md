@@ -26,8 +26,22 @@ Formally, the Tideman algorithm consists of three procedures:
 
 ## Understanding
 
-TODO
+Consider the tideman.c source code file. 
+
+First, notice the integer-valued matrix preferences (represented as a two-dimensional array of integers) that tracks voter preferences between candidates. The integer preferences[i][j] represents the number of voters who prefer Candidate i over Candidate j. 
+
+Second, the file also defines another boolean-valued matrix locked (again represented as a two-dimensional array of boolean values), which will represent the directed candidate graph, so locked[i][j] being true represents the existence of an directed edge from Candidate i to Candidate j, meaning Candidate i is locked in as preferred over Candidate j else, there is no edge between Candidate i and Candidate j.
+
+Third, a data structure is defined called pair (represented as a struct), used to represent a pair of candidates: each pair includes the winner's candidate index and the loser's candidate index (i.e. adding semantics to the candidate indexes). The candidatea are stored in a string-valued vector candidates (represented as an array of strings), representing the names of the candidates. There is also an array of pairs, which represent all of the pairs of candidates (for which one is preferred over the other) in the election.
+
+Fourth, the program defines two global variables: candidate_count and pairs_count, representing the numbers of candidates and pairs in the arrays candidates and pairs, respectively. 
+
+In the main procedure, the program loops through the locked graph and intially sets all the values to false, which indicates our initial graph has no edges in it.
 
 ## Specification
+
+TODO
+
+## Credit
 
 TODO

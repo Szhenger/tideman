@@ -61,7 +61,11 @@ Start by looking at the tideman.c source code file. Then we have:
 * `sort_pairs` function.
     * This function sorts the `pairs` array in decreasing order of strength of victory. If multiple pairs share the same strength of victory, then the order does not matter.
 * `locked` function.
-    * The function makes the `locked` graph, adding all edges in decreasing order of strength; however, only if the edge does not create a cycle that we check via a call to  
+    * The function makes the `locked` graph, adding all edges in decreasing order of strength; however, only if the edge does not create       a cycle that we calculate via a call to the `makes_cycle` function.
+* `makes_cycle` function.
+    * The function checks whether an edge makes a cycle in the `locked` graph if added recursively.
+* `print_winner` function.
+    * This function calculates the source of the `locked` graph and prints the name of the asscociated candidate.  
 
 ## Credit
 

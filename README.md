@@ -30,7 +30,7 @@ Consider the tideman.c source code file.
 
 First, notice the integer-valued matrix `preferences` (represented as a two-dimensional array of integers) that tracks voter preferences between candidates. The integer `preferences[i][j]` represents the number of voters who prefer Candidate i over Candidate j. 
 
-Second, the file also defines another boolean-valued matrix `locked` (again represented as a two-dimensional array of boolean values), which will represent the directed candidate graph, so `locked[i][j]` being true represents the existence of an directed edge from Candidate i to Candidate j, meaning Candidate i is locked in as preferred over Candidate j else, there is no edge between Candidate i and Candidate j.
+Second, the file also defines another boolean-valued matrix `locked` (again represented as a two-dimensional array of boolean values), which will represent the directed candidate graph, so `locked[i][j]` being `true` represents the existence of an directed edge from Candidate i to Candidate j, meaning Candidate i is locked in as preferred over Candidate j else, there is no edge between Candidate i and Candidate j.
 
 Third, a data structure is defined called `pair` (represented as a struct), used to represent a pair of candidates: each pair includes the winner's candidate index and the loser's candidate index (i.e. adding semantics to the candidate indexes). The candidates are stored in a string-valued vector `candidates` (represented as an array of `string`s), representing the names of the candidates. There is also an array `pairs`, which contains all of the pairs of candidates (for which one is preferred over the other) in the election.
 
@@ -47,7 +47,21 @@ Last, once all the votes are collected, the pair of candidates are added to the 
 Start by looking at the tideman.c source code file. Then we have:
 
 * `vote` function.
-    * Input: Takes arguments `name`, `rank`, and `ranks`. If `name` is a match for a name of a valid candidate, then update the `ranks` array to indicate that the voter has the     candidate ranked as their `rank` preference (with `0` is first preference, `1` is second perference, etc.).  
+    * Input: Takes arguments `name`, `rank`, and `ranks`. If `name` is a match for a name of a valid candidate, then update the `ranks` array to indicate that the voter has the          candidate ranked as their `rank` preference (with `0` is first preference, `1` is second perference, etc.).
+    * Output: Returns `true` if the rank was successfully recorded; else, `false` if the name is not valid or the rank is already specified for another prior candidate.
+    * Assume that no two candidates have the same name.
+* `record_preferences` function.
+    * This function is called once per voter.
+    * Input: Takes as argument the `ranks` array (assume the invariant that ranks[i] is the voter's `i`th candidate preference is true).
+    * Side Effect: Updates the global `preferences` array to add the current voter preferences.
+    * Assume that every votor ranks every candidate correctly (i.e. every candidates gets a rank by votor).
+* `add_pairs` function.
+    * The function adds all pairs of candidates such that one candidate is preferred to the `pairs` array. A pair of candidates who are tied (no one is preferable to the other) is       not addded to the array.
+    * The function updates the global `pairs_count` variable to be the number of pairs added.
+* `sort_pairs` function.
+    * This function sorts the `pairs` array in decreasing order of strength of victory. If multiple pairs share the same strength of victory, then the order does not matter.
+* `locked` function.
+    * The function makes the `locked` graph, adding all edges in decreasing order of strength; however, only if the edge does not create a cycle that we check via a call to  
 
 ## Credit
 

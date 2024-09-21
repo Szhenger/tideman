@@ -26,7 +26,7 @@ Formally, the Tideman algorithm consists of three procedures:
 
 ## Understanding
 
-Consider the tideman.c source code file. 
+Consider the `tideman.c` source code file. 
 
 First, notice the integer-valued matrix `preferences` (represented as a two-dimensional array of integers) that tracks voter preferences between candidates. The integer `preferences[i][j]` represents the number of voters who prefer Candidate i over Candidate j. 
 
@@ -44,7 +44,7 @@ Last, once all the votes are collected, the pair of candidates are added to the 
 
 ## Specification
 
-Start by looking at the tideman.c source code file. Then we have:
+Start by looking at the `tideman.c` source code file. Then we have:
 
 * `vote` function.
     * Input: Takes arguments `name`, `rank`, and `ranks`. If `name` is a match for a name of a valid candidate, then update the `ranks` array to indicate that the voter has the          candidate ranked as their `rank` preference (with `0` is first preference, `1` is second perference, etc.).

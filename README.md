@@ -44,7 +44,10 @@ Last, once all the votes are collected, the pair of candidates are added to the 
 
 ## Specification
 
-TODO
+Start by looking at the tideman.c source code file. Then we have:
+
+* `vote` function.
+  ** Input: Takes arguments `name`, `rank`, and `ranks`. If `name` is a match for a name of a valid candidate, then update the `ranks` array to indicate that the voter has the     candidate ranked as their `rank` preference (with `0` is first preference, `1` is second perference, etc.).  
 
 ## Credit
 

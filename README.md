@@ -69,4 +69,4 @@ Start by looking at the `tideman.c` source code file. Then we have:
 
 ## Credit
 
-TODO
+This problem orignates from CS50's Introduction to Computer Science 2024 (Computer Science 50) at Harvard University with the string50 header files supporting the string manipulation operations that the `vote` function calls in `get_string` designed and implemented by the CS50 Team.

@@ -53,10 +53,10 @@ Start by looking at the `tideman.c` source code file. Then we have:
 * `record_preferences` function.
     * This function is called once per voter.
     * Input: Takes as argument the `ranks` array (assume the invariant that ranks[i] is the voter's `i`th candidate preference is true).
-    * Side Effect: Updates the global `preferences` array to add the current voter preferences.
+    * Side Effect: Updates the global `preferences` array with the current voter preferences.
     * Assume that every votor ranks every candidate correctly (i.e. every candidates gets a rank by votor).
 * `add_pairs` function.
-    * The function adds all pairs of candidates such that one candidate is preferred to the `pairs` array. A pair of candidates who are tied (no one is preferable to the other) is       not addded to the array.
+    * The function adds all pairs of candidates such that one candidate is preferred to the `pairs` array. A pair of candidates who are tied (no one is preferable over the other)        is not addded to the array.
     * The function updates the global `pairs_count` variable to be the number of pairs added.
 * `sort_pairs` function.
     * This function sorts the `pairs` array in decreasing order of strength of victory. If multiple pairs share the same strength of victory, then the order does not matter.

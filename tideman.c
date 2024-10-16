@@ -96,8 +96,8 @@ int main(int argc, string argv[])
             }
         }
 
+        // Record voter's preferences
         record_preferences(ranks);
-
         printf("\n");
     }
 

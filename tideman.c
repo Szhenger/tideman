@@ -66,6 +66,7 @@ int main(int argc, string argv[])
         }
     }
 
+    // Initialize global variables
     pair_count = 0;
     int voter_count = get_int("Number of voters: ");
 
